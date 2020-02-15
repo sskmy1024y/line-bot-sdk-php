@@ -9,8 +9,7 @@
   "type": "library",
   "homepage": "https://github.com/line/line-bot-sdk-php",
   "license": "Apache-2.0",
-  "authors": [
-    {
+  "authors": [{
       "name": "moznion",
       "email": "moznion@gmail.com",
       "role": "Retired"
@@ -45,6 +44,8 @@
     "ext-posix": "*"
   },
   "suggest": {
+    "ext-posix": "*",
+    "orchestra/testbench": "^3.1",
     "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
     "roave/better-reflection": "Required by apigen/apigen:dev-master"
   },
@@ -63,5 +64,15 @@
     "doc": "apigen generate src --destination docs",
     "cs": "phpcs --standard=PSR2 src tests examples/EchoBot/src examples/EchoBot/public examples/KitchenSink/src examples/KitchenSink/public",
     "md": "phpmd --ignore-violations-on-exit src,examples/EchoBot/src,examples/EchoBot/public,examples/KitchenSink/src,examples/KitchenSink/public text phpmd.xml"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LINE\\Laravel\\LINEBotServiceProvider"
+      ],
+      "aliases": {
+        "LINEBot": "LINE\\Laravel\\Facade\\LINEBot"
+      }
+    }
   }
 }

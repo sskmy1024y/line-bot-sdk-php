@@ -2,24 +2,20 @@
 
 [![Build Status](https://travis-ci.org/line/line-bot-sdk-php.svg?branch=master)](https://travis-ci.org/line/line-bot-sdk-php)
 
-
 ## Introduction
 
 The LINE Messaging API SDK for PHP makes it easy to develop bots using LINE Messaging API, and you can create a sample bot within minutes.
-
 
 ## Documentation
 
 See the official API documentation for more information.
 
-- English: https://developers.line.biz/en/docs/messaging-api/overview/
-- Japanese: https://developers.line.biz/ja/docs/messaging-api/overview/
-
+* English: <https://developers.line.biz/en/docs/messaging-api/overview/>
+* Japanese: <https://developers.line.biz/ja/docs/messaging-api/overview/>
 
 ## Requirements
 
-- PHP 5.5 or later
-
+* PHP 5.5 or later
 
 ## Installation
 
@@ -87,12 +83,12 @@ Other methods that take `MessageBuilder` behave in the same way.
 
 Methods that call API returns `Response`. A `Response` instance has following methods:
 
-- `Response#isSucceeded()`
-- `Response#getHTTPStatus()`
-- `Response#getRawBody()`
-- `Response#getJSONDecodedBody()`
-- `Response#getHeader($name)`
-- `Response#getHeaders()`
+* `Response#isSucceeded()`
+* `Response#getHTTPStatus()`
+* `Response#getRawBody()`
+* `Response#getJSONDecodedBody()`
+* `Response#getHeader($name)`
+* `Response#getHeaders()`
 
 You can use these methods to check the response status and take response body.
 
@@ -133,17 +129,15 @@ The following shows how the webhook is handled:
 
 The following examples show how webhooks are handled:
 
-- [EchoBot: Route.php](/examples/EchoBot/src/LINEBot/EchoBot/Route.php)
-- [KitchenSink: Route.php](/examples/KitchenSink/src/LINEBot/KitchenSink/Route.php)
+* [EchoBot: Route.php](/examples/EchoBot/src/LINEBot/EchoBot/Route.php)
+* [KitchenSink: Route.php](/examples/KitchenSink/src/LINEBot/KitchenSink/Route.php)
 
-More information
---
+## More information
 
 For more information, see the [official API documents](#documentation) and PHPDoc.
 If it's your first time using this library, we recommend taking a look at `examples` and the PHPDoc of `\LINE\LINEBot`.
 
-Hints
---
+## Hints
 
 ### Examples
 
@@ -159,7 +153,7 @@ A full-stack (and slightly complex) sample implementation. This application demo
 
 ### PHPDoc
 
-[https://line.github.io/line-bot-sdk-php/](https://line.github.io/line-bot-sdk-php/)
+<https://line.github.io/line-bot-sdk-php/>
 
 This library provides PHPDoc to describe how to use the methods. You can generate the documentation using [apigen](http://www.apigen.org/) using the following command.
 
@@ -173,8 +167,7 @@ The HTML files are generated in `docs/`.
 
 [Official API documents](#documentation) shows the detail of  Messaging API and fundamental usage of SDK.
 
-Notes
---
+## Notes
 
 ### How to switch the HTTP client implementation
 
@@ -183,39 +176,50 @@ Notes
 
 Please refer [CurlHTTPClient](/src/LINEBot/HTTPClient/CurlHTTPClient.php) that is the default HTTP client implementation.
 
-
-See also
---
+## See also
 
 ### [line-bot-sdk-tiny](./line-bot-sdk-tiny)
 
 A very simple SDK (subset) for the LINE Messaging API for PHP.
 line-bot-sdk-tiny provides a simple interface and functions which makes it a good way to learn how to use the LINE Messaging API.
 
+### Laravel Support
+
+Easy to use from Laravel.
+After installed, add `LINE_BOT_CHANNEL_ACCESS_TOKEN` and `LINE_BOT_CHANNEL_SECRET` to `.env`
+
+```
+LINE_BOT_CHANNEL_ACCESS_TOKEN=<Channel Access Token>
+LINE_BOT_CHANNEL_SECRET=<Channel Secret>
+```
+
+then you can use `LINEBot` facade like following.
+
+```
+$profile = \LINEBot::getProfile($userId);
+```
+
 ## Help and media
 
-FAQ: https://developers.line.biz/en/faq/
+FAQ: <https://developers.line.biz/en/faq/>
 
-Community Q&A: https://www.line-community.me/questions
+Community Q&A: <https://www.line-community.me/questions>
 
-News: https://developers.line.biz/en/news/
+News: <https://developers.line.biz/en/news/>
 
 Twitter: [@LINE_DEV](https://twitter.com/LINE_DEV)
-
 
 ## Versioning
 
 This project respects semantic versioning.
 
-See http://semver.org/
-
+See <http://semver.org/>
 
 ## Contributing
 
 Please check [CONTRIBUTING](CONTRIBUTING.md) before making a contribution.
 
 For hacking instructions, please refer [HACKING.md](/HACKING.md).
-
 
 ## License
 
